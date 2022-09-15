@@ -4,7 +4,6 @@
   "private": true,
   "license": "MIT",
   "files": [
-    "base.json",
-    "vite.json"
+    "tsconfig.*.json"
   ]
 }

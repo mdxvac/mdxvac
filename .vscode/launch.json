@@ -2,26 +2,16 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "apps/web: DevServer",
+      "name": "Astro dev server",
       "type": "node-terminal",
       "request": "launch",
-      "cwd": "${workspaceFolder}/apps/web",
-      "command": "./node_modules/.bin/astro dev"
+      "command": "pnpm dev --filter web"
     },
     {
-      "name": "packages/common: Tests",
-      "type": "node",
+      "name": "Filtered tests...",
+      "type": "node-terminal",
       "request": "launch",
-      "cwd": "${workspaceFolder}/packages/common",
-      "runtimeArgs": [
-        "--inspect-brk",
-        "${workspaceRoot}/packages/common/node_modules/jest/bin/jest.js",
-        "--testTimeout",
-        "100000000",
-        "--runInBand"
-      ],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen"
+      "command": "pnpm --filter @mdxvac/remark-astro-frontmatter test"
     }
   ]
 }

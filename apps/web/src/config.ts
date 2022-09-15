@@ -1,7 +1,7 @@
 export const site = {
-  name: 'Astro-M²DX',
-  canonicalURL: 'https://astro-m2dx.vercel.app/',
-  twitter: '@astro-m2dx',
+  name: 'MDX Vacuum for Astro',
+  canonicalURL: 'https://mdxvac.netlify.app/',
+  twitter: '@mdxvac',
 };
 
 const config = {

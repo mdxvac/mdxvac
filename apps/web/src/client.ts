@@ -1,4 +1,4 @@
-console.log('Hello from Astro-M2DX');
+console.log('Hello from MDX Vacuum');
 
 // Required to make this a module
 export {};

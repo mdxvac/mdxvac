@@ -1,0 +1,64 @@
+{
+  "name": "@mdxvac/remark-astro-frontmatter",
+  "version": "0.0.0",
+  "description": "Remark plugin to add common frontmatter to markdown files",
+  "author": "christian@hackyourshack.org",
+  "homepage": "https://mdxvac.netlify.app/docs/plugin-remark-astro-frontmatter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdxvac/mdxvac/tree/main/packages/remark-astro-frontmatter"
+  },
+  "license": "MIT",
+  "keywords": [
+    "remark-plugin",
+    "astro",
+    "markdown",
+    "frontmatter"
+  ],
+  "type": "module",
+  "files": [
+    "dist/**/*"
+  ],
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "concurrently \"pnpm:build:*\"",
+    "build:modules": "vite build",
+    "build:types": "tsc",
+    "clean": "rimraf -rf ./dist/",
+    "test:ui": "vitest --ui",
+    "test:watch": "vitest",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@mdxvac/fs-utils": "workspace:*",
+    "@mdxvac/deep-merge": "workspace:*",
+    "@mdxvac/mem-cache": "workspace:*",
+    "@mdxvac/vfile-astro": "workspace:*",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.5",
+    "@types/mdast": "^3.0.10",
+    "@types/node": "latest",
+    "@vitest/ui": "^0.23.2",
+    "concurrently": "^7.4.0",
+    "eslint-config-base": "workspace:*",
+    "rimraf": "^3.0.2",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.8.3",
+    "unified": "^10.1.2",
+    "vfile": "^5.3.4",
+    "vite": "^3.1.1",
+    "vite-config": "workspace:*",
+    "vitest": "^0.23.2"
+  }
+}

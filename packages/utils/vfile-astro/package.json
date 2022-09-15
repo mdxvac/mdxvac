@@ -1,0 +1,35 @@
+{
+  "name": "@mdxvac/vfile-astro",
+  "version": "0.0.0",
+  "description": "Astro-enhanced Unified VFile",
+  "homepage": "https://mdxvac.netlify.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdxvac/mdxvac/tree/main/packages/utils/remark"
+  },
+  "author": "christian@hackyourshack.org",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "astro",
+    "types",
+    "typescript"
+  ],
+  "type": "module",
+  "files": [
+    "./index.d.ts"
+  ],
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {
+    "tsconfig": "workspace:*",
+    "typescript": "^4.8.3",
+    "vfile": "^5.3.4"
+  }
+}

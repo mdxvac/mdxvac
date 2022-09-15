@@ -1,16 +1,23 @@
 {
-  "name": "@astro-m2dx/web",
+  "name": "web",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "astro": "astro",
     "build:ci": "pnpm run -w build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^1.2.4"
   },
   "devDependencies": {
+    "@mdxvac/remark-astro-autoimports": "workspace:*",
+    "@mdxvac/remark-astro-frontmatter": "workspace:*",
+    "@mdxvac/remark-astro-rawmdx": "workspace:*",
+    "@mdxvac/remark-sectionize-headings": "workspace:*",
+    "@mdxvac/vite-astro-mdxcomponents": "workspace:*",
     "@astrojs/mdx": "^0.11.1",
     "@astrojs/tailwind": "^1.0.0",
     "@tailwindcss/typography": "^0.5.7",
@@ -22,13 +29,5 @@
     "tailwind-merge": "^1.6.0",
     "tailwindcss": "^3.1.8",
     "tsconfig": "workspace:*"
-  },
-  "dependencies": {
-    "@astro-m2dx/remark-astro-auto-import": "workspace:*",
-    "@astro-m2dx/remark-astro-frontmatter": "workspace:*",
-    "@astro-m2dx/remark-astro-raw-mdx": "workspace:*",
-    "@astro-m2dx/remark-sectionize-headings": "workspace:*",
-    "@astro-m2dx/vite-astro-mdx-mapping": "workspace:*",
-    "astro": "^1.2.1"
   }
 }
