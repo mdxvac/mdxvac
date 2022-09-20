@@ -1,14 +1,14 @@
-import { exists } from '@mdxvac/fs-utils';
 import { deepMerge, type ObjectLike } from '@mdxvac/deep-merge';
+import { exists } from '@mdxvac/fs-utils';
 import { MemCache } from '@mdxvac/mem-cache';
-import { readFileSync } from 'fs';
+import { readFile } from 'fs/promises';
 import YAML from 'js-yaml';
 import { dirname, join, normalize } from 'path';
 
 async function merge(up: ObjectLike | undefined, name: string, dir: string) {
   const file = join(dir, name);
   if (await exists(file)) {
-    const yaml = readFileSync(file, 'utf8');
+    const yaml = await readFile(file, 'utf8');
     const frontmatter = YAML.load(yaml) as ObjectLike;
     if (up) {
       return deepMerge(up, frontmatter);

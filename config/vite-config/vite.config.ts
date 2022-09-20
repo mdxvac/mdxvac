@@ -11,7 +11,7 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['path'],
+      external: ['path', 'fs/promises'],
     },
   },
   test: {},
