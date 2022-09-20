@@ -1,6 +1,6 @@
 {
   "name": "@mdxvac/remark-utils",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Type guards for remark",
   "homepage": "https://mdxvac.netlify.app/",
   "repository": {
