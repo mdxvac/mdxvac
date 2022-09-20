@@ -1,6 +1,6 @@
 {
   "name": "@mdxvac/remark-astro-rawmdx",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Remark plugin to add the raw MDX content to the frontmatter's 'mdx' property",
   "author": "christian@hackyourshack.org",
   "homepage": "https://mdxvac.netlify.app/",

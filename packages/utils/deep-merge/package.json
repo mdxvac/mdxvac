@@ -1,6 +1,6 @@
 {
   "name": "@mdxvac/deep-merge",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Simple algorithm to merge configuration objects with arbitrary depths",
   "homepage": "https://mdxvac.netlify.app/",
   "repository": {
