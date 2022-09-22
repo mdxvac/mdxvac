@@ -8,6 +8,6 @@
   "editor.tabSize": 2,
   "markdown.extension.toc.levels": "2..6",
   "prettier.printWidth": 100,
-  "terminal.integrated.cursorWidth": 3,
-  "svg.preview.background": "dark-transparent"
+  "svg.preview.background": "dark-transparent",
+  "terminal.integrated.cursorWidth": 3
 }

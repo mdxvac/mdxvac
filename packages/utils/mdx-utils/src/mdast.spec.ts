@@ -1,8 +1,8 @@
 import { describe, expect, test } from 'vitest';
-import { isHeading } from './index';
+import { isHeading } from './mdast';
 
-describe('remark-astro', function () {
-  test('type guard', function () {
+describe('mdast', function () {
+  test('Heading', function () {
     const input = { type: 'heading' };
     expect(isHeading(input)).toBe(true);
   });

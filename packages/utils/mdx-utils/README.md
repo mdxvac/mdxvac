@@ -1,4 +1,4 @@
-# @mdxvac/remark-utils
+# @mdxvac/mdx-utils
 
 Type guards for remark.
 
@@ -15,7 +15,7 @@ This is an NPM package providing type guards for remark types.
 
 ## When should I use this?
 
-If you want to check unknown remark nodes for their type and use them in a type-safe manner.
+You shouldn't, it is meant for internal use in the @mdxvac plugins, but not tested for general purpose.
 
 ## Install
 
@@ -23,13 +23,13 @@ This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908
 In Node.js (version 12.20+, 14.14+, or 16.0+), install with `npm`:
 
 ```sh
-npm install -D @mdxvac/remark-utils
+npm install -D @mdxvac/mdx-utils
 ```
 
 ## Use
 
 ```js
-import { isHeading } from '@mdxvac/remark-utils';
+import { isHeading } from '@mdxvac/mdx-utils';
 
 if (isHeading(node)) {
   // This is type-safe now

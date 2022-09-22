@@ -7,7 +7,6 @@
 '@mdxvac/deep-merge': patch
 '@mdxvac/fs-utils': patch
 '@mdxvac/mem-cache': patch
-'@mdxvac/remark-utils': patch
 '@mdxvac/vfile-astro': patch
 ---
 

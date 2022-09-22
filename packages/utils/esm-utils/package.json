@@ -1,17 +1,17 @@
 {
-  "name": "@mdxvac/remark-utils",
-  "version": "0.0.1",
-  "description": "Type guards for remark",
+  "name": "@mdxvac/esm-utils",
+  "version": "0.0.0",
+  "description": "Utilities to work with ESM files",
   "homepage": "https://mdxvac.netlify.app/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mdxvac/mdxvac/tree/main/packages/utils/remark"
+    "url": "https://github.com/mdxvac/mdxvac/tree/main/packages/utils/esm-utils"
   },
   "author": "christian@hackyourshack.org",
   "license": "MIT",
   "keywords": [
     "utilities",
-    "remark",
+    "esm",
     "typescript"
   ],
   "type": "module",
@@ -37,9 +37,12 @@
     "test:watch": "vitest",
     "test": "vitest run --passWithNoTests"
   },
-  "dependencies": {},
+  "dependencies": {
+    "acorn": "^8.8.0",
+    "unist-util-visit": "^4.1.1"
+  },
   "devDependencies": {
-    "@types/mdast": "^3.0.10",
+    "@types/estree": "^1.0.0",
     "@types/unist": "2.0.6",
     "@vitest/ui": "^0.23.2",
     "concurrently": "^7.4.0",

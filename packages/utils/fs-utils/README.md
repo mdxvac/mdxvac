@@ -15,6 +15,8 @@ An NPM package with a few utilities to work with configuration files in the file
 
 ## When should I use this?
 
+You shouldn't, it is meant for internal use in the @mdxvac plugins, but not tested for general purpose.
+
 If you work with configuration files placed in the file system relative to your subject file, you usually want to find the closest or all files looking up the directory tree. Then you can use the functions `findUp` (finding the closest) and `findUpAll` (finding all, up to a stop directory).
 
 ## Install

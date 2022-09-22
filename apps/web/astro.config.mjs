@@ -12,11 +12,18 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   integrations: [mdx(), tailwind()],
   markdown: {
-    remarkPlugins: [autoImports, frontmatter, rawMdx, [sectionizeHeadings, { levels: [2] }]],
+    remarkPlugins: [
+      autoImports, //
+      frontmatter,
+      rawMdx,
+      [sectionizeHeadings, { levels: [2] }],
+    ],
     extendDefaultPlugins: true,
   },
   vite: {
-    plugins: [mdxComponents()],
+    plugins: [
+      mdxComponents(), //
+    ],
     ssr: {
       external: ['svgo'],
     },

@@ -3,11 +3,9 @@ import { Claim } from '@components/Claim';
 import { Wrap } from '@components/Wrap';
 import { Code } from 'astro/components';
 
-const imports = {
+export const autoimports = {
   Card,
   Claim,
   Code,
   Wrap,
 };
-
-export default imports;

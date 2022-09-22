@@ -10,7 +10,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^1.2.4"
+    "astro": "^1.2.8"
   },
   "devDependencies": {
     "@mdxvac/remark-astro-autoimports": "workspace:*",
@@ -19,7 +19,7 @@
     "@mdxvac/remark-sectionize-headings": "workspace:*",
     "@mdxvac/vite-astro-mdxcomponents": "workspace:*",
     "@astrojs/mdx": "^0.11.1",
-    "@astrojs/tailwind": "^1.0.0",
+    "@astrojs/tailwind": "^2.0.1",
     "@tailwindcss/typography": "^0.5.7",
     "astro-icon": "^0.7.3",
     "eslint-config-base": "workspace:*",

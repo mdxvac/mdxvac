@@ -46,7 +46,10 @@ export async function buildLib(
 ): Promise<LibConfig> {
   const { entry = 'src/index.ts', internals = [], fileName = 'index' } = options;
   const packageJson = JSON.parse(await readFile(join(dirname, 'package.json'), 'utf8'));
-  const externals = Object.keys(packageJson.dependencies).filter((d) => !internals.includes(d));
+  const externals = [
+    ...Object.keys(packageJson.dependencies),
+    ...Object.keys(packageJson.devDependencies),
+  ].filter((d) => !internals.includes(d));
   return {
     build: {
       lib: {

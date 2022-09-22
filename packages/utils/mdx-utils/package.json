@@ -1,19 +1,18 @@
 {
-  "name": "@mdxvac/remark-astro-autoimports",
+  "name": "@mdxvac/mdx-utils",
   "version": "0.0.1",
-  "description": "Remark plugin to add automatic component imports to MDX files",
-  "author": "christian@hackyourshack.org",
+  "description": "Utilities to work with MDX files",
   "homepage": "https://mdxvac.netlify.app/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mdxvac/mdxvac/tree/main/packages/remark-astro-autoimports"
+    "url": "https://github.com/mdxvac/mdxvac/tree/main/packages/utils/remark"
   },
+  "author": "christian@hackyourshack.org",
   "license": "MIT",
   "keywords": [
-    "remark-plugin",
-    "astro",
-    "mdx",
-    "imports"
+    "utilities",
+    "remark",
+    "typescript"
   ],
   "type": "module",
   "files": [
@@ -40,26 +39,21 @@
   },
   "dependencies": {
     "@mdxvac/esm-utils": "workspace:*",
-    "@mdxvac/fs-utils": "workspace:*",
-    "@mdxvac/mdx-utils": "workspace:*",
-    "@mdxvac/mem-cache": "workspace:*",
-    "@mdxvac/vfile-astro": "workspace:*",
-    "acorn": "^8.8.0",
-    "estree-util-visit": "^1.2.0",
     "unist-util-visit": "^4.1.1"
   },
   "devDependencies": {
     "@types/estree": "^1.0.0",
     "@types/mdast": "^3.0.10",
-    "@types/node": "latest",
+    "@types/unist": "2.0.6",
     "@vitest/ui": "^0.23.2",
     "concurrently": "^7.4.0",
     "eslint-config-base": "workspace:*",
+    "mdast-util-mdx": "^2.0.0",
+    "remark": "^14.0.2",
+    "remark-mdx": "^2.1.3",
     "rimraf": "^3.0.2",
     "tsconfig": "workspace:*",
     "typescript": "^4.8.3",
-    "unified": "^10.1.2",
-    "vfile": "^5.3.4",
     "vite": "^3.1.1",
     "vite-config": "workspace:*",
     "vitest": "^0.23.2"

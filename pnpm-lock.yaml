@@ -11,6 +11,7 @@ importers:
       pnpm: ^7.11.0
       prettier: latest
       prettier-plugin-astro: ^0.5.4
+      rimraf: ^3.0.2
       turbo: latest
       typescript: ^4.8.3
       vite: ^3.1.1
@@ -23,7 +24,8 @@ importers:
       pnpm: 7.12.1
       prettier: 2.7.1
       prettier-plugin-astro: 0.5.4
-      turbo: 1.4.7
+      rimraf: 3.0.2
+      turbo: 1.5.1
       typescript: 4.8.3
       vite: 3.1.3
       vitest: 0.23.4_@vitest+ui@0.23.4
@@ -31,14 +33,14 @@ importers:
   apps/web:
     specifiers:
       '@astrojs/mdx': ^0.11.1
-      '@astrojs/tailwind': ^1.0.0
+      '@astrojs/tailwind': ^2.0.1
       '@mdxvac/remark-astro-autoimports': workspace:*
       '@mdxvac/remark-astro-frontmatter': workspace:*
       '@mdxvac/remark-astro-rawmdx': workspace:*
       '@mdxvac/remark-sectionize-headings': workspace:*
       '@mdxvac/vite-astro-mdxcomponents': workspace:*
       '@tailwindcss/typography': ^0.5.7
-      astro: ^1.2.4
+      astro: ^1.2.8
       astro-icon: ^0.7.3
       eslint-config-base: workspace:*
       postcss-import: ^15.0.0
@@ -48,10 +50,10 @@ importers:
       tailwindcss: ^3.1.8
       tsconfig: workspace:*
     dependencies:
-      astro: 1.2.7
+      astro: 1.2.8
     devDependencies:
-      '@astrojs/mdx': 0.11.1_rollup@2.79.0
-      '@astrojs/tailwind': 1.0.1
+      '@astrojs/mdx': 0.11.1_rollup@2.79.1
+      '@astrojs/tailwind': 2.0.1_tailwindcss@3.1.8
       '@mdxvac/remark-astro-autoimports': link:../../packages/plugins/remark-astro-autoimports
       '@mdxvac/remark-astro-frontmatter': link:../../packages/plugins/remark-astro-frontmatter
       '@mdxvac/remark-astro-rawmdx': link:../../packages/plugins/remark-astro-rawmdx
@@ -106,14 +108,19 @@ importers:
 
   packages/plugins/remark-astro-autoimports:
     specifiers:
+      '@mdxvac/esm-utils': workspace:*
       '@mdxvac/fs-utils': workspace:*
+      '@mdxvac/mdx-utils': workspace:*
       '@mdxvac/mem-cache': workspace:*
       '@mdxvac/vfile-astro': workspace:*
+      '@types/estree': ^1.0.0
       '@types/mdast': ^3.0.10
       '@types/node': latest
       '@vitest/ui': ^0.23.2
+      acorn: ^8.8.0
       concurrently: ^7.4.0
       eslint-config-base: workspace:*
+      estree-util-visit: ^1.2.0
       rimraf: ^3.0.2
       tsconfig: workspace:*
       typescript: ^4.8.3
@@ -124,11 +131,16 @@ importers:
       vite-config: workspace:*
       vitest: ^0.23.2
     dependencies:
+      '@mdxvac/esm-utils': link:../../utils/esm-utils
       '@mdxvac/fs-utils': link:../../utils/fs-utils
+      '@mdxvac/mdx-utils': link:../../utils/mdx-utils
       '@mdxvac/mem-cache': link:../../utils/mem-cache
       '@mdxvac/vfile-astro': link:../../utils/vfile-astro
+      acorn: 8.8.0
+      estree-util-visit: 1.2.0
       unist-util-visit: 4.1.1
     devDependencies:
+      '@types/estree': 1.0.0
       '@types/mdast': 3.0.10
       '@types/node': 18.7.18
       '@vitest/ui': 0.23.4
@@ -188,7 +200,7 @@ importers:
 
   packages/plugins/remark-astro-rawmdx:
     specifiers:
-      '@mdxvac/remark-utils': workspace:*
+      '@mdxvac/mdx-utils': workspace:*
       '@mdxvac/vfile-astro': workspace:*
       '@types/mdast': ^3.0.10
       '@types/node': latest
@@ -204,7 +216,7 @@ importers:
       vite-config: workspace:*
       vitest: ^0.23.2
     dependencies:
-      '@mdxvac/remark-utils': link:../../utils/remark-utils
+      '@mdxvac/mdx-utils': link:../../utils/mdx-utils
     devDependencies:
       '@mdxvac/vfile-astro': link:../../utils/vfile-astro
       '@types/mdast': 3.0.10
@@ -307,6 +319,37 @@ importers:
       vite-config: link:../../../config/vite-config
       vitest: 0.23.4_@vitest+ui@0.23.4
 
+  packages/utils/esm-utils:
+    specifiers:
+      '@types/estree': ^1.0.0
+      '@types/unist': 2.0.6
+      '@vitest/ui': ^0.23.2
+      acorn: ^8.8.0
+      concurrently: ^7.4.0
+      eslint-config-base: workspace:*
+      rimraf: ^3.0.2
+      tsconfig: workspace:*
+      typescript: ^4.8.3
+      unist-util-visit: ^4.1.1
+      vite: ^3.1.1
+      vite-config: workspace:*
+      vitest: ^0.23.2
+    dependencies:
+      acorn: 8.8.0
+      unist-util-visit: 4.1.1
+    devDependencies:
+      '@types/estree': 1.0.0
+      '@types/unist': 2.0.6
+      '@vitest/ui': 0.23.4
+      concurrently: 7.4.0
+      eslint-config-base: link:../../../config/eslint-config-base
+      rimraf: 3.0.2
+      tsconfig: link:../../../config/tsconfig
+      typescript: 4.8.3
+      vite: 3.1.3
+      vite-config: link:../../../config/vite-config
+      vitest: 0.23.4_@vitest+ui@0.23.4
+
   packages/utils/fs-utils:
     specifiers:
       '@mdxvac/mem-cache': workspace:*
@@ -334,6 +377,45 @@ importers:
       vite-config: link:../../../config/vite-config
       vitest: 0.23.4_@vitest+ui@0.23.4
 
+  packages/utils/mdx-utils:
+    specifiers:
+      '@mdxvac/esm-utils': workspace:*
+      '@types/estree': ^1.0.0
+      '@types/mdast': ^3.0.10
+      '@types/unist': 2.0.6
+      '@vitest/ui': ^0.23.2
+      concurrently: ^7.4.0
+      eslint-config-base: workspace:*
+      mdast-util-mdx: ^2.0.0
+      remark: ^14.0.2
+      remark-mdx: ^2.1.3
+      rimraf: ^3.0.2
+      tsconfig: workspace:*
+      typescript: ^4.8.3
+      unist-util-visit: ^4.1.1
+      vite: ^3.1.1
+      vite-config: workspace:*
+      vitest: ^0.23.2
+    dependencies:
+      '@mdxvac/esm-utils': link:../esm-utils
+      unist-util-visit: 4.1.1
+    devDependencies:
+      '@types/estree': 1.0.0
+      '@types/mdast': 3.0.10
+      '@types/unist': 2.0.6
+      '@vitest/ui': 0.23.4
+      concurrently: 7.4.0
+      eslint-config-base: link:../../../config/eslint-config-base
+      mdast-util-mdx: 2.0.0
+      remark: 14.0.2
+      remark-mdx: 2.1.3
+      rimraf: 3.0.2
+      tsconfig: link:../../../config/tsconfig
+      typescript: 4.8.3
+      vite: 3.1.3
+      vite-config: link:../../../config/vite-config
+      vitest: 0.23.4_@vitest+ui@0.23.4
+
   packages/utils/mem-cache:
     specifiers:
       '@vitest/ui': ^0.23.2
@@ -346,32 +428,6 @@ importers:
       vite-config: workspace:*
       vitest: ^0.23.2
     devDependencies:
-      '@vitest/ui': 0.23.4
-      concurrently: 7.4.0
-      eslint-config-base: link:../../../config/eslint-config-base
-      rimraf: 3.0.2
-      tsconfig: link:../../../config/tsconfig
-      typescript: 4.8.3
-      vite: 3.1.3
-      vite-config: link:../../../config/vite-config
-      vitest: 0.23.4_@vitest+ui@0.23.4
-
-  packages/utils/remark-utils:
-    specifiers:
-      '@types/mdast': ^3.0.10
-      '@types/unist': 2.0.6
-      '@vitest/ui': ^0.23.2
-      concurrently: ^7.4.0
-      eslint-config-base: workspace:*
-      rimraf: ^3.0.2
-      tsconfig: workspace:*
-      typescript: ^4.8.3
-      vite: ^3.1.1
-      vite-config: workspace:*
-      vitest: ^0.23.2
-    devDependencies:
-      '@types/mdast': 3.0.10
-      '@types/unist': 2.0.6
       '@vitest/ui': 0.23.4
       concurrently: 7.4.0
       eslint-config-base: link:../../../config/eslint-config-base
@@ -427,14 +483,15 @@ packages:
       vscode-uri: 3.0.6
     dev: false
 
-  /@astrojs/markdown-remark/1.1.1:
-    resolution: {integrity: sha512-eOvrqejecgeRLUXOdBfb0VoMppe7J80TlazaDnu4tVDdTG4nyuspO0CTPr9nzt6rbW5iLIh4KEUUuOk+z8n8uQ==}
+  /@astrojs/markdown-remark/1.1.2:
+    resolution: {integrity: sha512-afZWKRX7HFq1DdXq1jsUiqYee67Ln0Qan0yNgjNP2Nht0dxYD6JAK40+uiptKiRmP73cQjAVLGh54sgrruBDwA==}
     dependencies:
       '@astrojs/micromark-extension-mdx-jsx': 1.0.3
       '@astrojs/prism': 1.0.1
       acorn: 8.8.0
       acorn-jsx: 5.3.2_acorn@8.8.0
       github-slugger: 1.4.0
+      hast-util-to-html: 8.0.3
       mdast-util-mdx-expression: 1.3.0
       mdast-util-mdx-jsx: 1.2.0
       micromark-extension-mdx-expression: 1.0.3
@@ -455,13 +512,13 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/mdx/0.11.1_rollup@2.79.0:
+  /@astrojs/mdx/0.11.1_rollup@2.79.1:
     resolution: {integrity: sha512-L0uUBRlfRZvXhS5rc/VIrQlHldgj7cwrSb81K3cAB2LrzqZ3QgU+GRx/mdMN95Brqkv+8x77cNmsbAwXxijeNA==}
     engines: {node: ^14.18.0 || >=16.12.0}
     dependencies:
       '@astrojs/prism': 1.0.1
       '@mdx-js/mdx': 2.1.3
-      '@mdx-js/rollup': 2.1.3_rollup@2.79.0
+      '@mdx-js/rollup': 2.1.3_rollup@2.79.1
       acorn: 8.8.0
       es-module-lexer: 0.10.5
       github-slugger: 1.4.0
@@ -499,15 +556,15 @@ packages:
     dependencies:
       prismjs: 1.29.0
 
-  /@astrojs/tailwind/1.0.1:
-    resolution: {integrity: sha512-ZVytcmam/krEkg3xfW+2ItMz/XKWCg86Zj9lZsUOybEi3mcQZt++CRGyX1zqUAHrjXY9p/hhMeSWtwVX3GnIyA==}
+  /@astrojs/tailwind/2.0.1_tailwindcss@3.1.8:
+    resolution: {integrity: sha512-fvruoVEvx0zQsVY2AVRrhvH25zp6xTF8Wb1Lu43KXLoxU7fHIB1fcTTRP+Qhd4f5EvuTmuPKaKwHmbrv8mTV9A==}
+    peerDependencies:
+      tailwindcss: ^3.0.24
     dependencies:
       '@proload/core': 0.3.3
-      autoprefixer: 10.4.11_postcss@8.4.16
+      autoprefixer: 10.4.12_postcss@8.4.16
       postcss: 8.4.16
       tailwindcss: 3.1.8_postcss@8.4.16
-    transitivePeerDependencies:
-      - ts-node
     dev: true
 
   /@astrojs/telemetry/1.0.0:
@@ -1027,8 +1084,8 @@ packages:
       - supports-color
     dev: true
 
-  /@humanwhocodes/config-array/0.10.4:
-    resolution: {integrity: sha512-mXAIHxZT3Vcpg83opl1wGlVZ9xydbfZO3r5YfRSH6Gpp2J/PfdBP0wbDa2sO6/qRbcalpoevVyW6A/fI6LfeMw==}
+  /@humanwhocodes/config-array/0.10.5:
+    resolution: {integrity: sha512-XVVDtp+dVvRxMoxSiSfasYaG02VEe1qH5cKgMQJWhol6HwzbcqoCMJi8dAGoYAO57jhUyhI6cWuRiTcRaDaYug==}
     engines: {node: '>=10.10.0'}
     dependencies:
       '@humanwhocodes/object-schema': 1.2.1
@@ -1137,14 +1194,14 @@ packages:
       - supports-color
     dev: true
 
-  /@mdx-js/rollup/2.1.3_rollup@2.79.0:
+  /@mdx-js/rollup/2.1.3_rollup@2.79.1:
     resolution: {integrity: sha512-KaX9GcZ63TDaLNH9UYYE94+naZQldV2IUzmMkDVOlPxDtTh8kcEn8l6/4W1P79wxZZbakSOFejTuaYmcstl5sA==}
     peerDependencies:
       rollup: '>=2'
     dependencies:
       '@mdx-js/mdx': 2.1.3
       '@rollup/pluginutils': 4.2.1
-      rollup: 2.79.0
+      rollup: 2.79.1
       source-map: 0.7.4
       vfile: 5.3.5
     transitivePeerDependencies:
@@ -1658,14 +1715,14 @@ packages:
       svgo: 2.8.0
     dev: true
 
-  /astro/1.2.7:
-    resolution: {integrity: sha512-Zz0xwf/xL0Vb0I6bd9gZW6CGrn+N7uaTGrcsNt/zCGhQ2nLE/lEqro2QUZeCrxQ8hLrTuXB9KirWOK6gXq+LKA==}
+  /astro/1.2.8:
+    resolution: {integrity: sha512-KJkaOXN36tVvID2OOCn0kdAymwGtjHUDDb/bDbkMA8wMncrxzOOnppmytFHhKzeBhYsJVjj1Lc6H0FgSG2WwEg==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
       '@astrojs/compiler': 0.24.0
       '@astrojs/language-server': 0.23.3
-      '@astrojs/markdown-remark': 1.1.1
+      '@astrojs/markdown-remark': 1.1.2
       '@astrojs/telemetry': 1.0.0
       '@astrojs/webapi': 1.0.0
       '@babel/core': 7.19.1
@@ -1729,15 +1786,15 @@ packages:
       - ts-node
     dev: false
 
-  /autoprefixer/10.4.11_postcss@8.4.16:
-    resolution: {integrity: sha512-5lHp6DgRodxlBLSkzHOTcufWFflH1ewfy2hvFQyjrblBFlP/0Yh4O/Wrg4ow8WRlN3AAUFFLAQwX8hTptzqVHg==}
+  /autoprefixer/10.4.12_postcss@8.4.16:
+    resolution: {integrity: sha512-WrCGV9/b97Pa+jtwf5UGaRjgQIg7OK3D06GnoYoZNcG1Xb8Gt3EfuKjlhh9i/VtT16g6PYjZ69jdJ2g8FxSC4Q==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.4
-      caniuse-lite: 1.0.30001407
+      caniuse-lite: 1.0.30001409
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1818,8 +1875,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001407
-      electron-to-chromium: 1.4.255
+      caniuse-lite: 1.0.30001409
+      electron-to-chromium: 1.4.257
       node-releases: 2.0.6
       update-browserslist-db: 1.0.9_browserslist@4.21.4
 
@@ -1866,8 +1923,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /caniuse-lite/1.0.30001407:
-    resolution: {integrity: sha512-4ydV+t4P7X3zH83fQWNDX/mQEzYomossfpViCOx9zHBSMV+rIe3LFqglHHtVyvNl1FhTNxPxs3jei82iqOW04w==}
+  /caniuse-lite/1.0.30001409:
+    resolution: {integrity: sha512-V0mnJ5dwarmhYv8/MzhJ//aW68UpvnQBXv8lJ2QUsvn2pHcmAuNtu8hQEDz37XnA1iE+lRR9CIfGWWpgJ5QedQ==}
 
   /ccount/2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -2272,8 +2329,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: false
 
-  /electron-to-chromium/1.4.255:
-    resolution: {integrity: sha512-H+mFNKow6gi2P5Gi2d1Fvd3TUEJlB9CF7zYaIV9T83BE3wP1xZ0mRPbNTm0KUjyd1QiVy7iKXuIcjlDtBQMiAQ==}
+  /electron-to-chromium/1.4.257:
+    resolution: {integrity: sha512-C65sIwHqNnPC2ADMfse/jWTtmhZMII+x6ADI9gENzrOiI7BpxmfKFE84WkIEl5wEg+7+SfIkwChDlsd1Erju2A==}
 
   /emmet/2.3.6:
     resolution: {integrity: sha512-pLS4PBPDdxuUAmw7Me7+TcHbykTsBKN/S9XJbUOMFQrNv9MoshzyMFK/R57JBm94/6HSL4vHnDeEmxlC82NQ4A==}
@@ -2849,7 +2906,7 @@ packages:
     hasBin: true
     dependencies:
       '@eslint/eslintrc': 1.3.2
-      '@humanwhocodes/config-array': 0.10.4
+      '@humanwhocodes/config-array': 0.10.5
       '@humanwhocodes/gitignore-to-minimatch': 1.0.2
       '@humanwhocodes/module-importer': 1.0.1
       ajv: 6.12.6
@@ -5099,6 +5156,25 @@ packages:
       retext-smartypants: 5.2.0
       unist-util-visit: 4.1.1
 
+  /remark-stringify/10.0.2:
+    resolution: {integrity: sha512-6wV3pvbPvHkbNnWB0wdDvVFHOe1hBRAx1Q/5g/EpH4RppAII6J8Gnwe7VbHuXaoKIF6LAg6ExTel/+kNqSQ7lw==}
+    dependencies:
+      '@types/mdast': 3.0.10
+      mdast-util-to-markdown: 1.3.0
+      unified: 10.1.2
+    dev: true
+
+  /remark/14.0.2:
+    resolution: {integrity: sha512-A3ARm2V4BgiRXaUo5K0dRvJ1lbogrbXnhkJRmD0yw092/Yl0kOCZt1k9ZeElEwkZsWGsMumz6qL5MfNJH9nOBA==}
+    dependencies:
+      '@types/mdast': 3.0.10
+      remark-parse: 10.0.1
+      remark-stringify: 10.0.2
+      unified: 10.1.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /require-directory/2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
@@ -5190,8 +5266,8 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /rollup/2.79.0:
-    resolution: {integrity: sha512-x4KsrCgwQ7ZJPcFA/SUu6QVcYlO7uRLfLAy0DSA4NS2eG8japdbpM50ToH7z4iObodRYOJ0soneF0iaQRJ6zhA==}
+  /rollup/2.79.1:
+    resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -5720,137 +5796,65 @@ packages:
       yargs: 17.5.1
     dev: true
 
-  /turbo-android-arm64/1.4.7:
-    resolution: {integrity: sha512-BtWtH8e8w1GhtYpGQmkcDS/AUzVZhQ4ZZN+qtUFei1wZD7VAdtJ9Wcsfi3WD+mXA6vtpIpRJVfQMcShr8l8ErA==}
-    cpu: [arm64]
-    os: [android]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /turbo-darwin-64/1.4.7:
-    resolution: {integrity: sha512-bMvZaAz5diec9feZ0XpQosYI8U0kiOQM2tj2sv0Y2WZbe227wodVMCQMyUowmcotO8nr6NF76Xo5E+H+dnY6LQ==}
+  /turbo-darwin-64/1.5.1:
+    resolution: {integrity: sha512-63vbObfUOR26UNjwCEKLxrWiJFJE0XNSFNt2/CFF0nhx0I9RqNf21KCZk2FwcbHLSM/ca0Yqr/nJV9Wu+yo1Tg==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-darwin-arm64/1.4.7:
-    resolution: {integrity: sha512-AyfxYfKgh1EigQKjypbnDoMLuy4e/n/go+KYiWKKIpOaWXWLBokrBWzYN/aI3NMDRUJWK5ExdlWI9Nleelq8uQ==}
+  /turbo-darwin-arm64/1.5.1:
+    resolution: {integrity: sha512-VVrJdOvAXw17qKFdC5PlsoJ6Jupp5yCGUN+OJVWG/BvDVdcWJw3n0m3jpcvZ0JVKhGnjW4pRJudKLD1vR879Ng==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-freebsd-64/1.4.7:
-    resolution: {integrity: sha512-T5/osfbCh0rL53MFS5byFFfsR3vPMHIKIJ4fMMCNkoHsmFj2R0Pv53nqhEItogt0FJwCDHPyt7oBqO83H/AWQQ==}
-    cpu: [x64]
-    os: [freebsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /turbo-freebsd-arm64/1.4.7:
-    resolution: {integrity: sha512-PL+SaO78AUCas+YKj01UiS2rpmGcxz8XPmLdFWmq6PYjPX6GL5UBAc3pkBphIm0aTLZtsikoEul+JrwAuAy6UA==}
-    cpu: [arm64]
-    os: [freebsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /turbo-linux-32/1.4.7:
-    resolution: {integrity: sha512-dK94UwDzySMALoQtjBVVPbWJZP6xw3yHGuytM3q5p4kfMZPSA+rgNBn5T5Af2Rc7jxlLAsu5ODJ0SgIbWSF5Hg==}
-    cpu: [ia32]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /turbo-linux-64/1.4.7:
-    resolution: {integrity: sha512-F6IM23zgTYo9gYJaNp17gVvQBt0hMIvz52OF91DpPYSLpV2h9OSlzPJ3j5TGaWueS/bc/YCV23+VojXX/MauGQ==}
+  /turbo-linux-64/1.5.1:
+    resolution: {integrity: sha512-0PKkribBtjcuOllSbpA9rtLbyLdCJSAXO6G2TpZye6HUj/zRMeTVh3hpGwJJLsiaN/wCbF1g8uLtcrbEU0CcOw==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-arm/1.4.7:
-    resolution: {integrity: sha512-FTh4itdMNZ7IxGKknFnQ6iPO9vGGKqyySkCYLR01lnw6BTnKL9KuM9XUCBRyn7dNmHhAnqu1ZtVsBkH7CE7DEw==}
-    cpu: [arm]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /turbo-linux-arm64/1.4.7:
-    resolution: {integrity: sha512-kFe5jzj3FoY6jAEwyNEswndj1t/fPl0qyxfcQv6aNPz7Nb2Lh7mY/EEse+CG3ydIo5RZKba7ppQoBSDmHx7JsA==}
+  /turbo-linux-arm64/1.5.1:
+    resolution: {integrity: sha512-EzGwaNs1cHLlyYKNzJ1X2yvBE8ulFlVymW8lmllEwgXU801XlA8OEv8gfZOhtugvNr0F9eK3x0c30tGL/wco1w==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-mips64le/1.4.7:
-    resolution: {integrity: sha512-756nG8dnPQVcnl9s70S4NQ43aJjpsnc2h0toktPO+9u2ayv9XTbIPvZLFsS55bDeYhodDGvxoB96W6Xnx01hyQ==}
-    cpu: [mipsel]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /turbo-linux-ppc64le/1.4.7:
-    resolution: {integrity: sha512-VS2ofGN/XsafNGJdZ21UguURHb7KRG879yWLj59hO1d+0xXXQbx7ljsmEPOhiE4UjEdx4Ur6P44BhztTgDx9Og==}
-    cpu: [ppc64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /turbo-windows-32/1.4.7:
-    resolution: {integrity: sha512-M5GkZdA0CbJAOcR8SScM63CBV+NtX7qjhoNNOl0F99nGJ+rO3dH71CcM/rbhlz9SQzKQoX8rcuwZHe4r2HZAug==}
-    cpu: [ia32]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /turbo-windows-64/1.4.7:
-    resolution: {integrity: sha512-ftZUtZ1BX1vi8MbxKr+a7riIkhwvGnNTtWGprVu+aDJ8PnV+lNqbkrLJGvKP7Cn22hGTfzcjNNPcJ5PBZpQEQw==}
+  /turbo-windows-64/1.5.1:
+    resolution: {integrity: sha512-XX/0SB3cSpSGg33z4t0H3O0McHkqu5iIxmSZwqrrCG4h65ZUTVzr4AHG4cKF/vYYs4RRaPj9LaByveoh+AcZkA==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-arm64/1.4.7:
-    resolution: {integrity: sha512-mZ79XeJFfaeVKdBV3w0eoGaqAxFnwxrme0jZtSWemAbeDSCF/13wcbLGwtq0+Lu0LxEGweeQ5AqsCIc9t9i6sA==}
+  /turbo-windows-arm64/1.5.1:
+    resolution: {integrity: sha512-dKGKvCHiooCRv3liETY67XA5skrOYhjt1scEeVQ1dMRfb2ePq2NypldPRrVF/ykMoTPrVHul7N5+SJa/NoGXvQ==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo/1.4.7:
-    resolution: {integrity: sha512-oIk7PAISPidDOkTM5M+ydEe5GDQ/+TahDgIbaYKeAAy2Qpmur4s0HybSDWHIdxLqI96OPD/mOKymRLrjh3Mdhg==}
+  /turbo/1.5.1:
+    resolution: {integrity: sha512-AM6t4BBFt6ek96bRDr/UqF+zxlYjagPc29P4q/5phMKOH8SRNEb43MXjM2to8NwRhiaoPqNyct0gwgGM2rSRvA==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      turbo-android-arm64: 1.4.7
-      turbo-darwin-64: 1.4.7
-      turbo-darwin-arm64: 1.4.7
-      turbo-freebsd-64: 1.4.7
-      turbo-freebsd-arm64: 1.4.7
-      turbo-linux-32: 1.4.7
-      turbo-linux-64: 1.4.7
-      turbo-linux-arm: 1.4.7
-      turbo-linux-arm64: 1.4.7
-      turbo-linux-mips64le: 1.4.7
-      turbo-linux-ppc64le: 1.4.7
-      turbo-windows-32: 1.4.7
-      turbo-windows-64: 1.4.7
-      turbo-windows-arm64: 1.4.7
+      turbo-darwin-64: 1.5.1
+      turbo-darwin-arm64: 1.5.1
+      turbo-linux-64: 1.5.1
+      turbo-linux-arm64: 1.5.1
+      turbo-windows-64: 1.5.1
+      turbo-windows-arm64: 1.5.1
     dev: true
 
   /type-check/0.4.0:

@@ -40,7 +40,7 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@mdxvac/remark-utils": "workspace:*"
+    "@mdxvac/mdx-utils": "workspace:*"
   },
   "devDependencies": {
     "@mdxvac/vfile-astro": "workspace:*",
