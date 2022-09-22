@@ -1,6 +1,6 @@
 {
   "name": "@mdxvac/mdx-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Utilities to work with MDX files",
   "homepage": "https://mdxvac.netlify.app/",
   "repository": {

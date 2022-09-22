@@ -1,5 +1,11 @@
 # @mdxvac/vfile-astro
 
+## 0.0.2
+
+### Patch Changes
+
+- [`493e39c`](https://github.com/mdxvac/mdxvac/commit/493e39c53f322f61034150e91faf7ce0ee7d5690) Thanks [@christian-hackyourshack](https://github.com/christian-hackyourshack)! - Updated vite config for libraries
+
 ## 0.0.1
 
 ### Patch Changes
