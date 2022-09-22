@@ -1,6 +1,6 @@
 {
   "name": "@mdxvac/vite-astro-mdxcomponents",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vite plugin to add automatic component mapping to MDX files",
   "author": "christian@hackyourshack.org",
   "homepage": "https://mdxvac.netlify.app/",

@@ -1,5 +1,20 @@
 # @mdxvac/remark-astro-autoimports
 
+## 0.0.2
+
+### Patch Changes
+
+- [`4b762d1`](https://github.com/mdxvac/mdxvac/commit/4b762d13c059f1488c7a6abe20585bff6b3fa9d6) Thanks [@christian-hackyourshack](https://github.com/christian-hackyourshack)! - Re-implemented auto-imports
+
+- [`493e39c`](https://github.com/mdxvac/mdxvac/commit/493e39c53f322f61034150e91faf7ce0ee7d5690) Thanks [@christian-hackyourshack](https://github.com/christian-hackyourshack)! - Updated vite config for libraries
+
+- Updated dependencies [[`4b762d1`](https://github.com/mdxvac/mdxvac/commit/4b762d13c059f1488c7a6abe20585bff6b3fa9d6), [`493e39c`](https://github.com/mdxvac/mdxvac/commit/493e39c53f322f61034150e91faf7ce0ee7d5690)]:
+  - @mdxvac/esm-utils@0.0.1
+  - @mdxvac/mdx-utils@0.0.2
+  - @mdxvac/fs-utils@0.0.2
+  - @mdxvac/mem-cache@0.0.2
+  - @mdxvac/vfile-astro@0.0.2
+
 ## 0.0.1
 
 ### Patch Changes
