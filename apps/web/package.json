@@ -6,6 +6,7 @@
     "astro": "astro",
     "build:ci": "pnpm run -w build",
     "build": "astro build",
+    "clean": "rimraf -rf ./dist/",
     "dev": "astro dev",
     "preview": "astro preview"
   },
@@ -15,7 +16,6 @@
   "devDependencies": {
     "@mdxvac/remark-astro-autoimports": "workspace:*",
     "@mdxvac/remark-astro-frontmatter": "workspace:*",
-    "@mdxvac/remark-astro-rawmdx": "workspace:*",
     "@mdxvac/remark-sectionize-headings": "workspace:*",
     "@mdxvac/vite-astro-mdxcomponents": "workspace:*",
     "@astrojs/mdx": "^0.11.1",
@@ -24,6 +24,7 @@
     "astro-icon": "^0.7.3",
     "eslint-config-base": "workspace:*",
     "postcss-import": "^15.0.0",
+    "rimraf": "^3.0.2",
     "shiki": "^0.11.1",
     "svgo": "^2.8.0",
     "tailwind-merge": "^1.6.0",

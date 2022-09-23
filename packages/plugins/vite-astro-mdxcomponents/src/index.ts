@@ -6,16 +6,10 @@ import { mergeComponents } from './mergeComponents';
 const DEFAULT_NAME = '_components.ts';
 
 /**
- * Options for plugin remark-astro-auto-layout
- *
- * Use in astro.config.mjs like
- *
- * ```
- * vite: {
- *     plugins: [mdxComponents({name: "_map-this.ts"})],
- *     ...
+ * Options for plugin vite-astro-mdxcomponents, for details see
+ * https://mdxvac.netlify.app/plugins/vite-astro-mdxcomponents
  */
-export interface Options {
+export type Options = Partial<{
   /**
    * Name of Astro layout files to detect in the directory of the MDX-page.
    *
@@ -26,11 +20,12 @@ export interface Options {
    * Flag to enable cache for file system access, use only when doing SSG in prod
    */
   enableCache?: boolean;
-}
+}>;
 
 /**
- * Plugin
- * @param options optional `name` property for the layout file
+ * Define MDX component mappings for your HTML elements by scanning the directory up.
+ *
+ * @param options For configuration options, see https://mdxvac.netlify.app/plugins/vite-astro-mdxcomponents
  * @returns Vite plugin
  */
 export const plugin: Plugin<[Partial<Options>], unknown> = (options = {}) => {

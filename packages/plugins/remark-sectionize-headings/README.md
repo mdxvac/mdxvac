@@ -4,9 +4,11 @@ remark plugin to wrap markdown headings and the following paragraphs in HTML `se
 
 An alternative could be [remark-sectionize](https://www.npmjs.com/package/remark-sectionize), but this plugin offers a few more options and adds a CSS class according to the heading level to the resulting section.
 
-[MDX Vacuum](https://mdxvac.netlify.app) is a set of plugins allowing you to define an [Astro](https://astro.build) 🚀 publishing pipeline for Markdown/MDX documents with full [MDX](https://mdxjs.com) features, but without the technical fuss, i.e. you and your non-tech editors can write **clean** markdown.
+> **Dust off your MDX**  
+> [MDX Vacuum](https://mdxvac.netlify.app) is a set of plugins allowing you to write **clean** markdown, while still using all the great features of [MDX](https://mdxjs.com).  
+> Use [Astro](https://astro.build) 🚀 and these plugins to build your publishing pipeline for Markdown/MDX.
 
-Have a look at the other [`mdxvac` plugins](https://www.npmjs.com/org/mdxvac).
+Have a look at the other [`@mdxvac` plugins](https://www.npmjs.com/org/mdxvac) on NPM.
 
 ## Content
 

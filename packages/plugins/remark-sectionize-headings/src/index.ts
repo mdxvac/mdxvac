@@ -1,6 +1,16 @@
 import type { Plugin } from 'unified';
 
+/**
+ * Options for plugin remark-sectionize-headings, for details see
+ * https://mdxvac.netlify.app/plugins/remark-sectionize-headings
+ */
 export interface Options {
+  /**
+   * Heading levels to wrap into sections
+   *
+   * - e.g. `[ 2, 3 ]` for only levels 2 & 3
+   * - default: all
+   */
   levels: number[];
 }
 
@@ -14,8 +24,9 @@ interface Node {
 }
 
 /**
- * Plugin
- * @param options fully optional options
+ * Wrap sections defined by Markdown headings into HTML `section` elements.
+ *
+ * @param options For configuration options, see https://mdxvac.netlify.app/plugins/remark-sectionize-headings
  * @returns transformer function
  */
 export const plugin: Plugin<[Partial<Options>], unknown> = ({ levels } = {}) => {

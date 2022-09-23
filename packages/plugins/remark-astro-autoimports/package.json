@@ -43,7 +43,6 @@
     "@mdxvac/fs-utils": "workspace:*",
     "@mdxvac/mdx-utils": "workspace:*",
     "@mdxvac/mem-cache": "workspace:*",
-    "@mdxvac/vfile-astro": "workspace:*",
     "acorn": "^8.8.0",
     "estree-util-visit": "^1.2.0",
     "unist-util-visit": "^4.1.1"

@@ -22,4 +22,3 @@
   - @mdxvac/deep-merge@0.0.1
   - @mdxvac/fs-utils@0.0.1
   - @mdxvac/mem-cache@0.0.1
-  - @mdxvac/vfile-astro@0.0.1

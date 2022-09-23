@@ -39,11 +39,12 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@mdxvac/fs-utils": "workspace:*",
     "@mdxvac/deep-merge": "workspace:*",
+    "@mdxvac/fs-utils": "workspace:*",
+    "@mdxvac/mdx-utils": "workspace:*",
     "@mdxvac/mem-cache": "workspace:*",
-    "@mdxvac/vfile-astro": "workspace:*",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "unist-util-visit": "^4.1.1"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.5",
