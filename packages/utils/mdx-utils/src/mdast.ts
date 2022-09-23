@@ -32,6 +32,7 @@ import type {
   ThematicBreak,
   YAML,
 } from 'mdast';
+import type { MdxjsEsm } from 'mdast-util-mdx';
 import type { Node, Parent } from 'unist';
 
 export function isRoot(node: unknown): node is Root {
@@ -225,4 +226,8 @@ export function isFootnote(node: unknown): node is Footnote {
 
 export function isFootnoteReference(node: unknown): node is FootnoteReference {
   return !!node && (node as FootnoteReference).type === 'footnoteReference';
+}
+
+export function isMdxjsEsm(node: unknown): node is MdxjsEsm {
+  return !!node && (node as MdxjsEsm).type === 'mdxjsEsm';
 }

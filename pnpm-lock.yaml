@@ -34,12 +34,12 @@ importers:
     specifiers:
       '@astrojs/mdx': ^0.11.1
       '@astrojs/tailwind': ^2.0.1
+      '@mdxvac/remark-astro-autocomponents': workspace:*
       '@mdxvac/remark-astro-autoimports': workspace:*
       '@mdxvac/remark-astro-frontmatter': workspace:*
       '@mdxvac/remark-sectionize-headings': workspace:*
-      '@mdxvac/vite-astro-mdxcomponents': workspace:*
       '@tailwindcss/typography': ^0.5.7
-      astro: ^1.2.8
+      astro: ^1.3.0
       astro-icon: ^0.7.3
       eslint-config-base: workspace:*
       postcss-import: ^15.0.0
@@ -54,10 +54,10 @@ importers:
     devDependencies:
       '@astrojs/mdx': 0.11.1_rollup@2.79.1
       '@astrojs/tailwind': 2.0.1_tailwindcss@3.1.8
+      '@mdxvac/remark-astro-autocomponents': link:../../packages/plugins/remark-astro-autocomponents
       '@mdxvac/remark-astro-autoimports': link:../../packages/plugins/remark-astro-autoimports
       '@mdxvac/remark-astro-frontmatter': link:../../packages/plugins/remark-astro-frontmatter
       '@mdxvac/remark-sectionize-headings': link:../../packages/plugins/remark-sectionize-headings
-      '@mdxvac/vite-astro-mdxcomponents': link:../../packages/plugins/vite-astro-mdxcomponents
       '@tailwindcss/typography': 0.5.7_tailwindcss@3.1.8
       astro-icon: 0.7.3
       eslint-config-base: link:../../config/eslint-config-base
@@ -105,6 +105,53 @@ importers:
       typescript: 4.8.3
       vite: 3.1.3
       vitest: 0.23.4
+
+  packages/plugins/remark-astro-autocomponents:
+    specifiers:
+      '@mdxvac/esm-utils': workspace:*
+      '@mdxvac/fs-utils': workspace:*
+      '@mdxvac/mdx-utils': workspace:*
+      '@mdxvac/mem-cache': workspace:*
+      '@types/estree': ^1.0.0
+      '@types/mdast': ^3.0.10
+      '@types/node': latest
+      '@vitest/ui': ^0.23.2
+      acorn: ^8.8.0
+      concurrently: ^7.4.0
+      eslint-config-base: workspace:*
+      estree-util-visit: ^1.2.0
+      rimraf: ^3.0.2
+      tsconfig: workspace:*
+      typescript: ^4.8.3
+      unified: ^10.1.2
+      unist-util-visit: ^4.1.1
+      vfile: ^5.3.4
+      vite: ^3.1.1
+      vite-config: workspace:*
+      vitest: ^0.23.2
+    dependencies:
+      '@mdxvac/esm-utils': link:../../utils/esm-utils
+      '@mdxvac/fs-utils': link:../../utils/fs-utils
+      '@mdxvac/mdx-utils': link:../../utils/mdx-utils
+      '@mdxvac/mem-cache': link:../../utils/mem-cache
+      acorn: 8.8.0
+      estree-util-visit: 1.2.0
+      unist-util-visit: 4.1.1
+    devDependencies:
+      '@types/estree': 1.0.0
+      '@types/mdast': 3.0.10
+      '@types/node': 18.7.18
+      '@vitest/ui': 0.23.4
+      concurrently: 7.4.0
+      eslint-config-base: link:../../../config/eslint-config-base
+      rimraf: 3.0.2
+      tsconfig: link:../../../config/tsconfig
+      typescript: 4.8.3
+      unified: 10.1.2
+      vfile: 5.3.5
+      vite: 3.1.3
+      vite-config: link:../../../config/vite-config
+      vitest: 0.23.4_@vitest+ui@0.23.4
 
   packages/plugins/remark-astro-autoimports:
     specifiers:
@@ -218,37 +265,6 @@ importers:
       unist-util-visit: 4.1.1
     devDependencies:
       '@types/mdast': 3.0.10
-      '@types/node': 18.7.18
-      '@vitest/ui': 0.23.4
-      concurrently: 7.4.0
-      eslint-config-base: link:../../../config/eslint-config-base
-      rimraf: 3.0.2
-      tsconfig: link:../../../config/tsconfig
-      typescript: 4.8.3
-      unified: 10.1.2
-      vfile: 5.3.5
-      vite: 3.1.3
-      vite-config: link:../../../config/vite-config
-      vitest: 0.23.4_@vitest+ui@0.23.4
-
-  packages/plugins/vite-astro-mdxcomponents:
-    specifiers:
-      '@mdxvac/fs-utils': workspace:*
-      '@types/node': latest
-      '@vitest/ui': ^0.23.2
-      concurrently: ^7.4.0
-      eslint-config-base: workspace:*
-      rimraf: ^3.0.2
-      tsconfig: workspace:*
-      typescript: ^4.8.3
-      unified: ^10.1.2
-      vfile: ^5.3.4
-      vite: ^3.1.1
-      vite-config: workspace:*
-      vitest: ^0.23.2
-    dependencies:
-      '@mdxvac/fs-utils': link:../../utils/fs-utils
-    devDependencies:
       '@types/node': 18.7.18
       '@vitest/ui': 0.23.4
       concurrently: 7.4.0

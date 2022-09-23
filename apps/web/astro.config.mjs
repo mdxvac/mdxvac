@@ -1,9 +1,9 @@
 import mdx from '@astrojs/mdx';
 import tailwind from '@astrojs/tailwind';
+import autoComponents from '@mdxvac/remark-astro-autocomponents';
 import autoImports from '@mdxvac/remark-astro-autoimports';
 import frontmatter from '@mdxvac/remark-astro-frontmatter';
 import sectionizeHeadings from '@mdxvac/remark-sectionize-headings';
-import mdxComponents from '@mdxvac/vite-astro-mdxcomponents';
 
 import { defineConfig } from 'astro/config';
 
@@ -25,16 +25,14 @@ export default defineConfig({
   integrations: [mdx(), tailwind()],
   markdown: {
     remarkPlugins: [
-      autoImports, //
+      autoComponents, //
+      autoImports,
       [frontmatter, options.frontmatter],
       [sectionizeHeadings, options.sectionize],
     ],
     extendDefaultPlugins: true,
   },
   vite: {
-    plugins: [
-      mdxComponents(), //
-    ],
     ssr: {
       external: ['svgo'],
     },

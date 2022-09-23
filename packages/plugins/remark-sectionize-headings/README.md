@@ -12,11 +12,13 @@ Have a look at the other [`@mdxvac` plugins](https://www.npmjs.com/org/mdxvac) o
 
 ## Content
 
+- [Content](#content)
 - [What is this?](#what-is-this)
 - [When should I use this?](#when-should-i-use-this)
 - [Install](#install)
 - [Use](#use)
   - [Options](#options)
+    - [`levels: number[]`](#levels-number)
 
 ## What is this?
 
@@ -61,12 +63,34 @@ export default defineConfig({
 
 This uses the default options, where all headings are wrapped according to their level.
 
-### Options
+This markdown:
 
-If you want to wrap only headings on particular levels, you can pass the `levels` option (`number[]`) like so:
+```md
+## Deprecated
 
-```js
-remarkPlugins: [[sectionizeHeadings, {levels: [2]}]],
+- **remark-astro-auto-layout** - despite being the most successful plugin thus far, you should use the `remark-astro-frontmatter` plugin instead to define your common layout.
 ```
 
-which would wrap only heading level 2.
+would yield this HTML:
+
+```html
+<section class="h2">
+  <h2 id="deprecated">Deprecated</h2>
+  <ul>
+    <li>
+      <strong>remark-astro-auto-layout</strong> - despite being the most successful plugin thus far,
+      you should use the <code>remark-astro-frontmatter</code> plugin instead to define your common
+      layout.
+    </li>
+  </ul>
+</section>
+```
+
+### Options
+
+#### `levels: number[]`
+
+Heading levels to wrap into sections
+
+- e.g. `[ 2, 3 ]` for only levels 2 & 3
+- default: all

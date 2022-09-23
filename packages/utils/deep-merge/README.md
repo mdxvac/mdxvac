@@ -4,6 +4,7 @@ Simple algorithm to merge configuration objects with arbitrary depths.
 
 ## Content
 
+- [Content](#content)
 - [What is this?](#what-is-this)
 - [When should I use this?](#when-should-i-use-this)
 - [Install](#install)
@@ -23,7 +24,7 @@ The algorithm will create new objects for merged objects, so the input objects a
 
 You must pass at least two objects.
 
-I use it e.g. in a Static Site Generator to merge configuration files with default values specified on directory level.
+> I use it e.g. in a Static Site Generator to merge configuration files with default values specified on directory level.
 
 ## Install
 

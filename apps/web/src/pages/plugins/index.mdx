@@ -2,26 +2,23 @@
 
 ## Available Plugins
 
-- [Frontmatter](/plugins/remark-astro-frontmatter)
-- [Auto Import](/plugins/remark-astro-autoimports)
-- [Raw MDX Content](/plugins/remark-astro-rawmdx)
-- [Sections for Headings](/plugins/remark-sectionize-headings)
-- [HTML Element to Component Mapping](/plugins/vite-astro-mdxcomponents)
-- [Auto Layout](/plugins/remark-astro-auto-layout) - deprecated
-
-## The Concept
-
-Soon I will write a bit more about my idea of a clean MDX publishing pipeline.
-
-## Getting Started
-
-Here you will find something how to setup such a pipeline.
-
-## Just a Demo Section
-
 <Wrap>
-  <Card>
-    This card uses the override of Card with FancyCard from `pages/plugins/_autoimports.ts`...
+  <BaseCard href="/plugins/remark-astro-autoimports">
+    `remark-astro-autoimports` lets users define a set of components that can be used in MDX-files
+    without explicitly being imported.
+  </BaseCard>
+  <Card href="/plugins/remark-astro-frontmatter">
+    `remark-astro-frontmatter` lets users define and inject default frontmatter for all MDX-pages in
+    a directory and its subdirectories, e.g. the `layout` property.*
   </Card>
-  <BaseCard>...while this card uses the boring card</BaseCard>
+  <BaseCard href="/plugins/remark-sectionize-headings">
+    `remark-sectionize-headings` wrap headings and the following paragraphs into sections, e.g. to
+    style them.
+  </BaseCard>
+  <BaseCard href="/plugins/remark-astro-autocomponents">
+    `remark-astro-autocomponents` lets users define a mapping from standard html elements to JSX
+    components on a per-directory basis.
+  </BaseCard>
 </Wrap>
+
+\* The `remark-astro-frontmatter` card uses the override of Card with FancyCard from `pages/plugins/_autoimports.ts`. Learn [how to use](/plugins/remark-astro-autoimports#use) auto-imports.

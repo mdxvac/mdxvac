@@ -1,55 +1,56 @@
 # MDX Vacuum for Astro
 
-This project provides an example of how magic the use of [MDX](https://mdxjs.com) in [Astro](https://astro.build) can be, to create beautiful and function-rich web sites, even for non-tech editors.
+If you have used [MDX](https://mdxjs.com) before, you might have noticed that MDX files tend to become quite technical.
 
-_MDX Vacuum_ provides tools to setup your publishing pipeline based on **clean** MDX, using [Astro's MDX support](https://docs.astro.build/en/guides/markdown-content/).
+For us tech nerds, that is mostly fine, and being able to write the content into our technical documents in Markdown is already a big gain. But for non-tech content-editors, writing this style of markdown is quite a burden, and actually I realized, that it is quite a burden for my mind, too.
 
-On NPM you'll find all [`mdxvac` plugins](https://www.npmjs.com/org/mdxvac).
+> I like my content to be clean, so I decided to _dust off my MDX_.
 
-## Clean MDX = Magic MDX
+With the arrival of [Astro v1.0](https://astro.build)🚀 and it's [MDX Integration](https://docs.astro.build/en/guides/integrations-guide/mdx/), there was the chance to implement a publication pipeline that provides content-editors with the ability to write almost clean markdown, with only a few sprinkles of JSX and without overloading the frontmatter: **MDX Vacuum for Astro** was born\*
 
-With clean I mean markdown, with only a few sprinkles of JSX and without overloading the frontmatter.
+\*previously called [`astro-m2dx`](https://astro-m2dx.netlify.app) - "Magic MDX"
 
-<Claim>Less `X` ... More Magic*</Claim>
+MDX Vacuum is a [set of Vite, Remark and Rehype plugins](#the-plugins), that you can use in your Astro site generator, to keep your MDX as clean as you like.
 
-Have a look at the [sources for this page](#source-code-for-this-page).
+<Claim>Dear Astronauts, take your vacuum cleaner and dust off your MDX!</Claim>
 
-## Check out the existing plugins
+## The web site
+
+Besides the plugins, the sources of the 'MDX Vacuum' web site are published as a showcase of how to apply the plugins to a file/git-based publication workflow. The source for the MDX Vacuum web site can be found in [`apps/web`](https://github.com/mdxvac/mdxvac/tree/main/apps/web).
+
+## The plugins
+
+The plugins can be found in [`packages/plugins/*`](https://github.com/mdxvac/mdxvac/tree/main/packages/plugins) and will be published to [NPM](https://www.npmjs.com/org/mdxvac)
+
+The following plugins are available:
 
 <Wrap>
-  <Card title="Frontmatter" href="/plugins/remark-astro-frontmatter">
-    `remark-astro-frontmatter` lets users define common frontmatter for all MDX-pages in a directory
-    and its subdirectories, e.g. a common `layout`.
+  <Card href="/plugins/remark-astro-autoimports">
+    `remark-astro-autoimports` lets users define a set of components that can be used in MDX-files
+    without explicitly being imported.
   </Card>
-  <Card title="Element Mapping" href="/plugins/vite-astro-mdxcomponents">
-    Plugin `vite-astro-mdxcomponents` lets users define a mapping from standard html elements to JSX
+  <Card href="/plugins/remark-astro-frontmatter">
+    `remark-astro-frontmatter` lets users define and inject default frontmatter for all MDX-pages in
+    a directory and its subdirectories, e.g. the `layout` property.
+  </Card>
+  <Card href="/plugins/remark-sectionize-headings">
+    `remark-sectionize-headings` wrap headings and the following paragraphs into sections, e.g. to
+    style them.
+  </Card>
+  <Card href="/plugins/remark-astro-autocomponents">
+    `remark-astro-autocomponents` lets users define a mapping from standard html elements to JSX
     components on a per-directory basis.
-  </Card>
-  <Card title="Raw MDX Content" href="/plugins/remark-astro-rawmdx">
-    Plugin `remark-astro-rawmdx` adds the raw MDX content to the frontmatter, to analyze in the
-    layout, e.g. to compute reading time.
-  </Card>
-  <Card title="Auto Import" href="/plugins/remark-astro-autoimports">
-    Plugin `remark-astro-autoimports` lets users define a set of components that can be used in
-    MDX-files without explicitly being imported.
-  </Card>
-  <Card title="Sections for Headings" href="/plugins/remark-sectionize-headings">
-    Plugin `remark-sectionize-headings` wraps headings and the following paragraphs into sections,
-    e.g. to style them with CSS' `nth-child(even)`.
   </Card>
 </Wrap>
 
 ## Discuss upcoming plugins
 
-- **remark-astro-title-abstract** - extracts the title and abstract of a markdown file and adds it to the frontmatter `title` and `abstract` properties.
-- **remark-astro-import-src** - imports files relative to referencing file from string `src` attributes.
-- **remark-astro-style-directive** - lets users apply CSS classes to the HTML elements resulting from the markdown.
-- **remark-astro-mdast** - adds the markdown AST (`mdast`) to the frontmatter, to analyze in the layout, e.g. to generate a TOC.
-- **remark-astro-hast** - adds the HTML AST (`hast`) to the frontmatter, to analyze in the layout, e.g. to ???.
+The following plugins are planned:
 
-## Deprecated
+- **remark-astro-relativeimport** - dynamically imports files relative to the referencing file.
+- **remark-astro-styledirective** - lets users apply CSS classes to the HTML elements resulting from the markdown.
 
-- **remark-astro-auto-layout** - despite being the most successful plugin thus far, you should use the `remark-astro-frontmatter` plugin instead to define your common layout.
+If you want to start a discussion [open an issue on github](https://github.com/mdxvac/mdxvac/issues/new/choose)...
 
 ## Source code for this page
 

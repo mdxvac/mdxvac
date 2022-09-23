@@ -1,20 +1,19 @@
 {
-  "name": "@mdxvac/vite-astro-mdxcomponents",
-  "version": "0.0.2",
-  "description": "Vite plugin to add automatic component mapping to MDX files",
+  "name": "@mdxvac/remark-astro-autocomponents",
+  "version": "0.0.0",
+  "description": "Remark plugin to add automatic component mappings for HTML elements from MDX files",
   "author": "christian@hackyourshack.org",
   "homepage": "https://mdxvac.netlify.app/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mdxvac/mdxvac/tree/main/packages/vite-astro-mdxcomponents"
+    "url": "https://github.com/mdxvac/mdxvac/tree/main/packages/remark-astro-autocomponents"
   },
   "license": "MIT",
   "keywords": [
-    "vite-plugin",
+    "remark-plugin",
     "astro",
     "mdx",
-    "components",
-    "mapping"
+    "imports"
   ],
   "type": "module",
   "files": [
@@ -40,9 +39,17 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@mdxvac/fs-utils": "workspace:*"
+    "@mdxvac/esm-utils": "workspace:*",
+    "@mdxvac/fs-utils": "workspace:*",
+    "@mdxvac/mdx-utils": "workspace:*",
+    "@mdxvac/mem-cache": "workspace:*",
+    "acorn": "^8.8.0",
+    "estree-util-visit": "^1.2.0",
+    "unist-util-visit": "^4.1.1"
   },
   "devDependencies": {
+    "@types/estree": "^1.0.0",
+    "@types/mdast": "^3.0.10",
     "@types/node": "latest",
     "@vitest/ui": "^0.23.2",
     "concurrently": "^7.4.0",

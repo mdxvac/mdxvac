@@ -4,17 +4,21 @@ remark plugin to wrap markdown headings and the following paragraphs in HTML `se
 
 An alternative could be [remark-sectionize](https://www.npmjs.com/package/remark-sectionize), but this plugin offers a few more options and adds a CSS class according to the heading level to the resulting section.
 
-[MDX Vacuum](https://mdxvac.netlify.app) is a set of plugins allowing you to define an [Astro](https://astro.build) 🚀 publishing pipeline for Markdown/MDX documents with full [MDX](https://mdxjs.com) features, but without the technical fuss, i.e. you and your non-tech editors can write **clean** markdown.
+> **Dust off your MDX**  
+> [MDX Vacuum](https://mdxvac.netlify.app) is a set of plugins allowing you to write **clean** markdown, while still using all the great features of [MDX](https://mdxjs.com).  
+> Use [Astro](https://astro.build) 🚀 and these plugins to build your publishing pipeline for Markdown/MDX.
 
-Have a look at the other [`mdxvac` plugins](https://www.npmjs.com/org/mdxvac).
+Have a look at the other [`@mdxvac` plugins](https://www.npmjs.com/org/mdxvac) on NPM.
 
 ## Content
 
+- [Content](#content)
 - [What is this?](#what-is-this)
 - [When should I use this?](#when-should-i-use-this)
 - [Install](#install)
 - [Use](#use)
   - [Options](#options)
+    - [`levels: number[]`](#levels-number)
 
 ## What is this?
 
@@ -59,12 +63,34 @@ export default defineConfig({
 
 This uses the default options, where all headings are wrapped according to their level.
 
-### Options
+This markdown:
 
-If you want to wrap only headings on particular levels, you can pass the `levels` option (`number[]`) like so:
+```md
+## Deprecated
 
-```js
-remarkPlugins: [[sectionizeHeadings, {levels: [2]}]],
+- **remark-astro-auto-layout** - despite being the most successful plugin thus far, you should use the `remark-astro-frontmatter` plugin instead to define your common layout.
 ```
 
-which would wrap only heading level 2.
+would yield this HTML:
+
+```html
+<section class="h2">
+  <h2 id="deprecated">Deprecated</h2>
+  <ul>
+    <li>
+      <strong>remark-astro-auto-layout</strong> - despite being the most successful plugin thus far,
+      you should use the <code>remark-astro-frontmatter</code> plugin instead to define your common
+      layout.
+    </li>
+  </ul>
+</section>
+```
+
+### Options
+
+#### `levels: number[]`
+
+Heading levels to wrap into sections
+
+- e.g. `[ 2, 3 ]` for only levels 2 & 3
+- default: all

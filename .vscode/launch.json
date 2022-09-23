@@ -2,10 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "[remark-astro-frontmatter] pnpm test:watch",
+      "name": "[remark-astro-autocomponents] pnpm test:watch",
       "type": "node-terminal",
       "request": "launch",
-      "command": "pnpm --filter @mdxvac/remark-astro-frontmatter test:watch"
+      "command": "pnpm --filter @mdxvac/remark-astro-autocomponents test:watch"
     },
     {
       "name": "[web] pnpm dev",
