@@ -1,6 +1,6 @@
 {
   "name": "@mdxvac/fs-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Caching file system access",
   "homepage": "https://mdxvac.netlify.app/",
   "repository": {

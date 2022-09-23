@@ -1,5 +1,11 @@
 # @mdxvac/mem-cache
 
+## 0.0.3
+
+### Patch Changes
+
+- [`95ec7d9`](https://github.com/mdxvac/mdxvac/commit/95ec7d951a56d2b8b19b33314ad1d79d52696ea8) Thanks [@christian-hackyourshack](https://github.com/christian-hackyourshack)! - Fixed an issue with automatic component mappings
+
 ## 0.0.2
 
 ### Patch Changes
