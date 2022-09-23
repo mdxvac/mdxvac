@@ -1,6 +1,6 @@
 {
   "name": "@mdxvac/mem-cache",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Typed memory cache for stateless functions",
   "homepage": "https://mdxvac.netlify.app/",
   "repository": {
