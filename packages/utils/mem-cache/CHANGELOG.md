@@ -1,5 +1,11 @@
 # @mdxvac/mem-cache
 
+## 0.0.4
+
+### Patch Changes
+
+- [`11c9429`](https://github.com/mdxvac/mdxvac/commit/11c942914b6a1f1ebc90a7a4d5e929e514258c63) Thanks [@christian-hackyourshack](https://github.com/christian-hackyourshack)! - Deprecating all packages from @mdxvac in favour of astro-m2dx
+
 ## 0.0.3
 
 ### Patch Changes
