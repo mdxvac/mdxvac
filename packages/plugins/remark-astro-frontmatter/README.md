@@ -1,5 +1,7 @@
 # @mdxvac/remark-astro-frontmatter
 
+> **DEPRECATED:** Please consider using the plugin [astro-m2dx](https://www.npmjs.com/package/astro-m2dx), which bundles all features from the `@mdxvac` plugins in one plugin (completely opt-in).
+
 remark plugin to inject and define common frontmatter for all Markdown files, e.g. to **set a common layout** for all files.
 
 > **Dust off your MDX**  

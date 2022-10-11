@@ -1,5 +1,7 @@
 # @mdxvac/remark-astro-autocomponents
 
+> **DEPRECATED:** Please consider using the plugin [astro-m2dx](https://www.npmjs.com/package/astro-m2dx), which bundles all features from the `@mdxvac` plugins in one plugin (completely opt-in).
+
 Remark plugin to define common component mappings for all Astro markdown files in a directory.
 
 > **Dust off your MDX**  

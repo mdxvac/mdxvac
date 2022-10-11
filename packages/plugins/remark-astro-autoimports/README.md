@@ -1,5 +1,7 @@
 # @mdxvac/remark-astro-autoimports
 
+> **DEPRECATED:** Please consider using the plugin [astro-m2dx](https://www.npmjs.com/package/astro-m2dx), which bundles all features from the `@mdxvac` plugins in one plugin (completely opt-in).
+
 remark plugin to define default JSX component imports for all MDX files in a directory.
 
 > **Dust off your MDX**  

@@ -1,5 +1,7 @@
 # @mdxvac - MDX Vacuum for Astro
 
+> **DEPRECATED:** Please consider using the plugin [astro-m2dx](https://www.npmjs.com/package/astro-m2dx), which bundles all features from the `@mdxvac` plugins in one plugin (completely opt-in).
+
 [MDX Vacuum](https://mdxvac.netlify.app) is a set of Vite, Remark and Rehype plugins, that you can use in your [Astro](https://astro.build)🚀 site generator, to keep your [MDX](https://mdxjs.com) as clean as you like.
 
 > This is the monorepo, that I use to maintain those plugins and the website.

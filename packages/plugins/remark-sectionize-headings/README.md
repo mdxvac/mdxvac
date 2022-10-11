@@ -1,5 +1,7 @@
 # @mdxvac/remark-sectionize-headings
 
+> **DEPRECATED:** Please consider using the plugin [astro-m2dx](https://www.npmjs.com/package/astro-m2dx), which bundles all features from the `@mdxvac` plugins in one plugin (completely opt-in).
+
 remark plugin to wrap markdown headings and the following paragraphs in HTML `section` elements.
 
 An alternative could be [remark-sectionize](https://www.npmjs.com/package/remark-sectionize), but this plugin offers a few more options and adds a CSS class according to the heading level to the resulting section.

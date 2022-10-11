@@ -1,9 +1,12 @@
 # @mdxvac/mdx-utils
 
+> **DEPRECATED:** Please consider using the plugin [astro-m2dx](https://www.npmjs.com/package/astro-m2dx), which bundles all features from the `@mdxvac` plugins in one plugin (completely opt-in).
+
 Type guards for remark.
 
 ## Content
 
+- [Content](#content)
 - [What is this?](#what-is-this)
 - [When should I use this?](#when-should-i-use-this)
 - [Install](#install)
